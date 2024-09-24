@@ -7,7 +7,7 @@ let currFolder;
 
 async function getsongs(folder) {
     currFolder = folder;
-    let a = await fetch(`http://127.0.0.1:5500/${folder}/`);
+    let a = await fetch(`https://sportify2clon.vercel.app/${folder}/`);
     let response = await a.text();
     console.log(response);
     let div = document.createElement('div');
@@ -95,7 +95,7 @@ function convertSecondsToMinSec(seconds) {
 
 //This function is not working
 async function displayAlbums(folder) {
-    let response = await fetch(`http://127.0.0.1:5500/${folder}`);
+    let response = await fetch(`https://sportify2clon.vercel.app/${folder}`);
     let responseText = await response.text();
     let playlist1 = document.querySelector('.rightmain');
     console.log(response, 'displayalbums');
@@ -108,7 +108,7 @@ async function displayAlbums(folder) {
     playlist1.innerHTML = ' ';
 
     let albumResponse = await fetch(
-        `http://127.0.0.1:5500/${folder}/info.json`
+        `https://sportify2clon.vercel.app/${folder}/info.json`
     );
     let albumInfo = await albumResponse.json();
 
